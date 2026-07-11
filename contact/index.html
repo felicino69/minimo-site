@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Minimo VFX</title>
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo-link"><img src="/assets/logo.png" alt="Minimo"></a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/fun/">Fun</a></li>
+        <li><a href="/about-us/">About Us</a></li>
+        <li><a href="/contact/" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <video class="page-hero-bg" autoplay muted loop playsinline>
+    <source src="/assets/videos/hero-reel-2025.mp4" type="video/mp4">
+  </video>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <h1>Contact</h1>
+    <p>Get in touch with our Barcelona or Las Palmas studio.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3>Barcelona HQ</h3>
+        <p>Carrer de la Diputació, 273 - 2,2<br>08007 Barcelona, Spain</p>
+        <p><a href="tel:+34626742676">(+34) 626 74 26 76</a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=Carrer+de+la+Diputaci%C3%B3+273+Barcelona" target="_blank" rel="noopener">View on map</a></p>
+      </div>
+
+      <div class="contact-card">
+        <h3>Las Palmas Office</h3>
+        <p>c/José Franchy Roca, nº 5<br>35007 Las Palmas de Gran Canaria, Spain</p>
+        <p><a href="tel:+34626742676">(+34) 626 74 26 76</a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=Calle+Jos%C3%A9+Franchy+Roca+5+Las+Palmas" target="_blank" rel="noopener">View on map</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Send us a message</h2>
+    <p class="section-sub">Both forms are delivered to our team &mdash; just pick the one that fits.</p>
+
+    <div class="reel-tabs form-tabs">
+      <button class="reel-tab active" data-form="project">New Project</button>
+      <button class="reel-tab" data-form="talent">Talent / Careers</button>
+    </div>
+
+    <form class="contact-form active" data-form="project" name="new-project" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks/">
+      <input type="hidden" name="form-name" value="new-project">
+      <p class="hidden-field"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+      <div class="form-row">
+        <label>Name<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+      </div>
+      <label>Company / Studio<input type="text" name="company"></label>
+      <label>Tell us about the project<textarea name="message" rows="5" required></textarea></label>
+      <button type="submit" class="btn-play">Send Enquiry</button>
+    </form>
+
+    <form class="contact-form" data-form="talent" name="talent-careers" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks/">
+      <input type="hidden" name="form-name" value="talent-careers">
+      <p class="hidden-field"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+      <div class="form-row">
+        <label>Name<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+      </div>
+      <label>Portfolio / Reel link<input type="url" name="portfolio"></label>
+      <label>Tell us about yourself<textarea name="message" rows="5" required></textarea></label>
+      <button type="submit" class="btn-play">Send Application</button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">&copy; 2026 Minimo VFX. Barcelona &middot; Las Palmas de Gran Canaria.</div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>
