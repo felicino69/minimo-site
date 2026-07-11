@@ -67,9 +67,10 @@
       <button class="reel-tab" data-form="talent">Talent / Careers</button>
     </div>
 
-    <form class="contact-form active" data-form="project" name="new-project" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks/">
-      <input type="hidden" name="form-name" value="new-project">
-      <p class="hidden-field"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+    <form class="contact-form active" data-form="project" method="POST" action="https://formspree.io/f/meeyjega">
+      <input type="hidden" name="_subject" value="NEW PROJECT">
+      <input type="hidden" name="_next" value="https://minimovfx.com/thanks/">
+      <p class="hidden-field"><label>Don't fill this out if you're human: <input name="_gotcha"></label></p>
       <div class="form-row">
         <label>Name<input type="text" name="name" required></label>
         <label>Email<input type="email" name="email" required></label>
@@ -79,9 +80,10 @@
       <button type="submit" class="btn-play">Send Enquiry</button>
     </form>
 
-    <form class="contact-form" data-form="talent" name="talent-careers" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thanks/">
-      <input type="hidden" name="form-name" value="talent-careers">
-      <p class="hidden-field"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+    <form class="contact-form" data-form="talent" method="POST" action="https://formspree.io/f/meeyjega">
+      <input type="hidden" name="_subject" value="TALENT">
+      <input type="hidden" name="_next" value="https://minimovfx.com/thanks/">
+      <p class="hidden-field"><label>Don't fill this out if you're human: <input name="_gotcha"></label></p>
       <div class="form-row">
         <label>Name<input type="text" name="name" required></label>
         <label>Email<input type="email" name="email" required></label>
