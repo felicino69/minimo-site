@@ -1,0 +1,9 @@
+{
+  "name": "minimo-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Minimo VFX static site with Netlify Functions",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}

@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const requestView = document.getElementById('request-view');
   const showRequestView = document.getElementById('show-request-view');
   const showPasswordView = document.getElementById('show-password-view');
-  const PRIVATE_REEL_PASSWORD = 'M1n1m026!';
 
   if (privateBtn && passwordGate) {
     privateBtn.addEventListener('click', () => {
@@ -94,17 +93,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (passwordForm) {
-    passwordForm.addEventListener('submit', (e) => {
+    passwordForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      if (passwordInput.value === PRIVATE_REEL_PASSWORD) {
-        passwordGate.classList.remove('open');
-        if (!lightbox || !lightboxVideo) return;
-        lightboxVideo.src = '/assets/videos/private-reel.mp4';
-        lightbox.classList.add('open');
-        lightboxVideo.muted = false;
-        lightboxVideo.play().catch(() => {});
-      } else {
+      passwordError.style.display = 'none';
+      const submitBtn = passwordForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      try {
+        const res = await fetch('/.netlify/functions/verify-password', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password: passwordInput.value }),
+        });
+        const data = await res.json();
+        if (data.valid) {
+          passwordGate.classList.remove('open');
+          if (!lightbox || !lightboxVideo) return;
+          lightboxVideo.src = '/assets/videos/private-reel.mp4';
+          lightbox.classList.add('open');
+          lightboxVideo.muted = false;
+          lightboxVideo.play().catch(() => {});
+        } else {
+          passwordError.style.display = 'block';
+        }
+      } catch (err) {
+        passwordError.textContent = 'Something went wrong — please try again.';
         passwordError.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
       }
     });
   }
