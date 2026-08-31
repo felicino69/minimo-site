@@ -648,7 +648,9 @@ img { max-width: 100%; display: block; }
   margin-top: 20px;
 }
 
-#password-input {
+.password-gate-content input[type="text"],
+.password-gate-content input[type="email"],
+.password-gate-content input[type="password"] {
   font-family: var(--font);
   font-size: 0.95rem;
   color: var(--text);
@@ -657,9 +659,10 @@ img { max-width: 100%; display: block; }
   border-radius: 8px;
   padding: 10px 12px;
   text-align: center;
+  width: 100%;
 }
 
-#password-input:focus { outline: none; border-color: var(--text-dim); }
+.password-gate-content input:focus { outline: none; border-color: var(--text-dim); }
 
 .password-error {
   display: none;
@@ -667,6 +670,22 @@ img { max-width: 100%; display: block; }
   font-size: 0.85rem;
   margin: 0;
 }
+
+#request-form { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+
+.gate-switch-link {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  text-decoration: underline;
+  font-size: 0.85rem;
+  cursor: pointer;
+  margin: 16px auto 0;
+  font-family: var(--font);
+}
+
+.gate-switch-link:hover { color: var(--text); }
 
 /* Contact forms */
 .hidden-field { display: none; }

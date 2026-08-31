@@ -57,6 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const passwordInput = document.getElementById('password-input');
   const passwordError = document.getElementById('password-error');
   const passwordGateClose = document.getElementById('password-gate-close');
+  const passwordView = document.getElementById('password-view');
+  const requestView = document.getElementById('request-view');
+  const showRequestView = document.getElementById('show-request-view');
+  const showPasswordView = document.getElementById('show-password-view');
   const PRIVATE_REEL_PASSWORD = 'M1n1m026!';
 
   if (privateBtn && passwordGate) {
@@ -64,6 +68,23 @@ document.addEventListener('DOMContentLoaded', () => {
       passwordGate.classList.add('open');
       passwordError.style.display = 'none';
       passwordInput.value = '';
+      passwordView.style.display = 'block';
+      requestView.style.display = 'none';
+      passwordInput.focus();
+    });
+  }
+
+  if (showRequestView) {
+    showRequestView.addEventListener('click', () => {
+      passwordView.style.display = 'none';
+      requestView.style.display = 'block';
+    });
+  }
+
+  if (showPasswordView) {
+    showPasswordView.addEventListener('click', () => {
+      requestView.style.display = 'none';
+      passwordView.style.display = 'block';
       passwordInput.focus();
     });
   }
