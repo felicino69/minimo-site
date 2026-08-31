@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reels — Minimo VFX</title>
+<meta name="description" content="Watch Minimo's showreels — current, previous, and archive work.">
+<link rel="icon" href="/assets/logo.png">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo-link"><img src="/assets/logo.png" alt="Minimo"></a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/reels/" class="active">Reels</a></li>
+        <li><a href="/fun/">Fun</a></li>
+        <li><a href="/about-us/">About Us</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <video class="page-hero-bg" autoplay muted loop playsinline>
+    <source src="/assets/videos/hero-reel-2025.mp4" type="video/mp4">
+  </video>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <h1>Reels</h1>
+    <p>Our current work, plus a look back through the archive.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="reels-grid">
+
+      <div class="reel-card">
+        <h3>Current Reel</h3>
+        <p>2025 — our latest work, playing as the background on the site right now.</p>
+        <button class="btn-play reel-btn" data-src="/assets/videos/hero-reel-2025.mp4">Watch</button>
+      </div>
+
+      <div class="reel-card">
+        <h3>VFX Reel</h3>
+        <p>A dedicated look at our visual effects work.</p>
+        <button class="btn-play reel-btn" data-src="/assets/videos/vfx-reel-2026.mp4">Watch</button>
+      </div>
+
+      <div class="reel-card">
+        <h3>Previous Reel</h3>
+        <p>2023 showreel.</p>
+        <button class="btn-outline reel-btn" data-src="/assets/videos/previous-reel.mp4">Watch</button>
+      </div>
+
+      <div class="reel-card">
+        <h3>Ancient Reel</h3>
+        <p>2020 showreel — a look further back.</p>
+        <button class="btn-outline reel-btn" data-src="/assets/videos/ancient-reel.mp4">Watch</button>
+      </div>
+
+      <div class="reel-card">
+        <h3>Private</h3>
+        <p>Password protected — shared privately with select clients.</p>
+        <button class="btn-outline" id="private-reel-btn">Watch</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="password-gate" id="password-gate">
+  <div class="password-gate-content">
+    <button class="lightbox-close" id="password-gate-close" aria-label="Close">&times;</button>
+    <h3>Private Reel</h3>
+    <p class="section-sub">This reel is password protected. Please enter the password you were given.</p>
+    <form id="password-form">
+      <input type="password" id="password-input" placeholder="Password" autocomplete="off" required>
+      <button type="submit" class="btn-play">Unlock</button>
+      <p class="password-error" id="password-error">Incorrect password — please try again.</p>
+    </form>
+  </div>
+</div>
+
+<div class="lightbox">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <div class="lightbox-content">
+    <video controls playsinline></video>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">&copy; 2026 Minimo VFX. Barcelona &middot; Las Palmas de Gran Canaria.</div>
+</footer>
+
+<script src="/main.js"></script>
+</body>
+</html>

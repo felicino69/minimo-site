@@ -51,6 +51,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const privateBtn = document.getElementById('private-reel-btn');
+  const passwordGate = document.getElementById('password-gate');
+  const passwordForm = document.getElementById('password-form');
+  const passwordInput = document.getElementById('password-input');
+  const passwordError = document.getElementById('password-error');
+  const passwordGateClose = document.getElementById('password-gate-close');
+  const PRIVATE_REEL_PASSWORD = 'M1n1m026!';
+
+  if (privateBtn && passwordGate) {
+    privateBtn.addEventListener('click', () => {
+      passwordGate.classList.add('open');
+      passwordError.style.display = 'none';
+      passwordInput.value = '';
+      passwordInput.focus();
+    });
+  }
+
+  if (passwordGateClose) {
+    passwordGateClose.addEventListener('click', () => passwordGate.classList.remove('open'));
+  }
+
+  if (passwordForm) {
+    passwordForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (passwordInput.value === PRIVATE_REEL_PASSWORD) {
+        passwordGate.classList.remove('open');
+        if (!lightbox || !lightboxVideo) return;
+        lightboxVideo.src = '/assets/videos/private-reel.mp4';
+        lightbox.classList.add('open');
+        lightboxVideo.muted = false;
+        lightboxVideo.play().catch(() => {});
+      } else {
+        passwordError.style.display = 'block';
+      }
+    });
+  }
+
   moduleCards.forEach((card) => {
     const preview = card.querySelector('video');
     card.addEventListener('mouseenter', () => preview && preview.play().catch(() => {}));

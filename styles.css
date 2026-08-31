@@ -592,6 +592,82 @@ img { max-width: 100%; display: block; }
 .fun-teaser-inner .section-sub { margin: 0; }
 .fun-teaser-inner .btn-play { white-space: nowrap; text-decoration: none; display: inline-block; }
 
+/* Reels page */
+.reels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.reel-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reel-card h3 { margin: 0; font-size: 1.05rem; }
+.reel-card p { margin: 0; color: var(--text-dim); font-size: 0.9rem; flex-grow: 1; }
+.reel-card .btn-play,
+.reel-card .btn-outline { align-self: flex-start; }
+
+/* Password gate modal */
+.password-gate {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 110;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.password-gate.open { display: flex; }
+
+.password-gate-content {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+}
+
+.password-gate-content h3 { margin: 0 0 8px; }
+
+#password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+#password-input {
+  font-family: var(--font);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: center;
+}
+
+#password-input:focus { outline: none; border-color: var(--text-dim); }
+
+.password-error {
+  display: none;
+  color: #f87171;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
 /* Contact forms */
 .hidden-field { display: none; }
 
