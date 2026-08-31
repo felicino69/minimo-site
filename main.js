@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const privateBtn = document.getElementById('private-reel-btn');
   const passwordGate = document.getElementById('password-gate');
   const passwordForm = document.getElementById('password-form');
+  const emailInput = document.getElementById('email-input');
   const passwordInput = document.getElementById('password-input');
   const passwordError = document.getElementById('password-error');
   const passwordGateClose = document.getElementById('password-gate-close');
@@ -66,10 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
     privateBtn.addEventListener('click', () => {
       passwordGate.classList.add('open');
       passwordError.style.display = 'none';
+      emailInput.value = '';
       passwordInput.value = '';
       passwordView.style.display = 'block';
       requestView.style.display = 'none';
-      passwordInput.focus();
+      emailInput.focus();
     });
   }
 
@@ -84,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showPasswordView.addEventListener('click', () => {
       requestView.style.display = 'none';
       passwordView.style.display = 'block';
-      passwordInput.focus();
+      emailInput.focus();
     });
   }
 
@@ -102,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const res = await fetch('/.netlify/functions/verify-password', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ password: passwordInput.value }),
+          body: JSON.stringify({ email: emailInput.value, password: passwordInput.value }),
         });
         const data = await res.json();
         if (data.valid) {

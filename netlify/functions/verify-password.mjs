@@ -12,8 +12,9 @@ export default async (req) => {
     return new Response(JSON.stringify({ valid: false, error: 'Invalid request' }), { status: 400 });
   }
 
+  const email = (body.email || '').trim().toLowerCase();
   const password = body.password;
-  if (!password) {
+  if (!email || !password) {
     return new Response(JSON.stringify({ valid: false }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
@@ -22,7 +23,9 @@ export default async (req) => {
 
   const store = getStore('reel-credentials');
   const list = (await store.get('list', { type: 'json' })) || [];
-  const valid = list.some((entry) => entry.password === password);
+  const valid = list.some(
+    (entry) => entry.email.trim().toLowerCase() === email && entry.password === password
+  );
 
   return new Response(JSON.stringify({ valid }), {
     status: 200,

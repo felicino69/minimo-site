@@ -81,11 +81,12 @@
 
     <div id="password-view">
       <h3>Private Reel</h3>
-      <p class="section-sub">This reel is password protected. Please enter the password you were given.</p>
+      <p class="section-sub">This reel is password protected. Please enter the email and password you were given.</p>
       <form id="password-form">
+        <input type="email" id="email-input" placeholder="Email" autocomplete="off" required>
         <input type="password" id="password-input" placeholder="Password" autocomplete="off" required>
         <button type="submit" class="btn-play">Unlock</button>
-        <p class="password-error" id="password-error">Incorrect password — please try again.</p>
+        <p class="password-error" id="password-error">Incorrect email or password — please try again.</p>
       </form>
       <button type="button" class="gate-switch-link" id="show-request-view">Don't have a password? Request access</button>
     </div>
