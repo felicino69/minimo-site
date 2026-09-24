@@ -65,48 +65,9 @@
         <button class="btn-outline reel-btn" data-src="/assets/videos/ancient-reel.mp4">Watch</button>
       </div>
 
-      <div class="reel-card">
-        <h3>Private</h3>
-        <p>Password protected — shared privately with select clients.</p>
-        <button class="btn-outline" id="private-reel-btn">Watch</button>
-      </div>
-
     </div>
   </div>
 </section>
-
-<div class="password-gate" id="password-gate">
-  <div class="password-gate-content">
-    <button class="lightbox-close" id="password-gate-close" aria-label="Close">&times;</button>
-
-    <div id="password-view">
-      <h3>Private Reel</h3>
-      <p class="section-sub">This reel is password protected. Please enter the email and password you were given.</p>
-      <form id="password-form">
-        <input type="email" id="email-input" placeholder="Email" autocomplete="off" required>
-        <input type="password" id="password-input" placeholder="Password" autocomplete="off" required>
-        <button type="submit" class="btn-play">Unlock</button>
-        <p class="password-error" id="password-error">Incorrect email or password — please try again.</p>
-      </form>
-      <button type="button" class="gate-switch-link" id="show-request-view">Don't have a password? Request access</button>
-    </div>
-
-    <div id="request-view" style="display:none;">
-      <h3>Request Access</h3>
-      <p class="section-sub">Tell us who you are and we'll send you the password.</p>
-      <form id="request-form" method="POST" action="https://formspree.io/f/meeyjega">
-        <input type="hidden" name="_subject" value="PRIVATE REEL REQUEST">
-        <input type="hidden" name="_next" value="https://minimovfx.com/thanks/">
-        <p class="hidden-field"><label>Don't fill this out if you're human: <input name="_gotcha"></label></p>
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="company" placeholder="Company / Studio (optional)">
-        <button type="submit" class="btn-play">Request Access</button>
-      </form>
-      <button type="button" class="gate-switch-link" id="show-password-view">Already have a password? Enter it</button>
-    </div>
-  </div>
-</div>
 
 <div class="lightbox">
   <button class="lightbox-close" aria-label="Close">&times;</button>
